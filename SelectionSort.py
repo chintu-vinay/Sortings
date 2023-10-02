@@ -1,0 +1,22 @@
+def swap(num1, num2):
+    temp = num1
+    num1 = num2
+    num2 = temp
+    return num1, num2
+ran = int(input("Enter the range of numbers : "))
+l1 = []
+print("Enter the numbers : ")
+for i in range(ran):
+    l1.append(int(input()))
+for i in range(ran - 1):
+    j = i + 1
+    min_num = l1[i]
+    while(j < ran):
+        if(min_num > l1[j]):
+            min_num = l1[j]
+            flag = j
+        j += 1
+    if(min_num != l1[i]):
+        l1[i], l1[flag] = swap(l1[i], min_num)
+print(l1)
+        
