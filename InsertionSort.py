@@ -14,10 +14,9 @@ for count in range(ran - 1):
     while(i < j):
         if(l1[i] > l1[j]):
             l1[i], l1[j] = swap(l1[i], l1[j])
-        j, k = i, i - 1
-        while(k >= 0 and l1[k] > l1[j]):
-            l1[k], l1[j] = swap(l1[k], l1[j])
-            k -=1
+        j = i
+        while((j - 1) >= 0 and l1[j - 1] > l1[j]):
+            l1[j - 1], l1[j] = swap(l1[j - 1], l1[j])
             j -= 1
         i += 1
 print(l1)
